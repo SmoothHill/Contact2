@@ -1,0 +1,28 @@
+@startuml
+class ContactDAO {
+- {static} String URL
+- {static} String USER
+- {static} String PASSWORD
++ Connection getConnection()
++ void addContact(String,String,String)
++ void modifyContact(String,String,String)
++ void deleteContact(String)
++ ResultSet viewContacts()
+}
+class ContactClient {
+- ContactService contactService
+- JTextArea textArea
+- JTextField nameField
+- void displayContacts()
++ {static} void main(String[])
+}
+class ContactService {
+- {static} String URL
+- {static} String USER
+- {static} String PASSWORD
++ String addContact(String,String,String)
++ String modifyContact(String,String,String)
++ String deleteContact(String)
++ ResultSet viewContacts()
+}
+@enduml
